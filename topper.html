@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IT Department Topper Details</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>IT Department Topper Details</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Roll Number</th>
+        <th>CGPA</th>
+      </tr>
+    </thead>
+    <tbody id="topperDetails">
+    </tbody>
+  </table>
+
+  <script>
+    // Sample data
+    var toppers = [
+      { name: 'John Doe', rollNumber: 'IT001', cgpa: 9.8 },
+      { name: 'Jane Smith', rollNumber: 'IT002', cgpa: 9.6 },
+      { name: 'David Johnson', rollNumber: 'IT003', cgpa: 9.7 },
+      { name: 'Sarah Williams', rollNumber: 'IT004', cgpa: 9.5 },
+      { name: 'Michael Brown', rollNumber: 'IT005', cgpa: 9.9 }
+    ];
+
+    var topperDetails = document.getElementById('topperDetails');
+
+    for (var i = 0; i < toppers.length; i++) {
+      var topper = toppers[i];
+      var row = document.createElement('tr');
+      row.innerHTML = '<td>' + topper.name + '</td>' +
+                      '<td>' + topper.rollNumber + '</td>' +
+                      '<td>' + topper.cgpa + '</td>';
+      topperDetails.appendChild(row);
+    }
+  </script>
+</body>
+</html>
